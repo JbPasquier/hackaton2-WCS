@@ -51,12 +51,7 @@ class Hackaton2 extends Component {
                     {"\n"}
                 </Text>
                 <TextInput style = {{backgroundColor:"#ffffff"}} secureTextEntry={true} placeholder={"Mot de passe..."} />
-                <Button
-                        style={{fontSize: 20, color: 'green'}}
-                        styleDisabled={{color: 'red'}}
-                      >
-                        T'es cap ?
-                      </Button>
+                <Button style={{fontSize: 25, backgroundColor:'red', color: 'white'}} styleDisabled={{color: 'yellow'}}>T'es cap ?</Button>
             </View>
         );
     }
