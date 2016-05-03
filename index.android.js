@@ -2,50 +2,23 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
+'use strict';
+var React = require('react-native');
+var Hackaton2 = React.createClass({
+    render: function() {
+       var layout =
+           <React.View >
 
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+               <React.Text>
+                   Bonjour
+               </React.Text>
 
-class hackaton2 extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+           </React.View>
+       ;
+       return layout;
+   }
 });
+var styles = React.StyleSheet.create({
 
-AppRegistry.registerComponent('hackaton2', () => hackaton2);
+});
+React.AppRegistry.registerComponent('hackaton2', () => Hackaton2);
