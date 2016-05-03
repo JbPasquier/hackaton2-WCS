@@ -10,6 +10,9 @@
         var layout =
             <React.View >
 
+              <React.Image style={styles.toto}
+                source={require('./assets/logo.png')}
+              />
                 <React.Text>
                     Bonjour
                 </React.Text>
@@ -20,6 +23,9 @@
     }
  });
  var styles = React.StyleSheet.create({
+   toto: { backgroundColor : '#26569e',
+   textAlign : 'center',
 
+   }
  });
  React.AppRegistry.registerComponent('hackaton2', () => Hackaton2);
