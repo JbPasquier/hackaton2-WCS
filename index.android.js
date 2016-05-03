@@ -7,9 +7,10 @@ import React, {
     AppRegistry
 } from 'react-native';
 
-import First from './components/First.js'
-import Second from './components/Second.js'
-import Hackaton2 from './components/Hackaton2.js'
+import Login from './components/Login.js'
+import Welcome from './components/Welcome.js'
+import CapSomeone from './components/CapSomeone.js'
+import CapMe from './components/CapMe.js'
 
 var _navigator;
 
@@ -25,7 +26,7 @@ class Navigation extends Component{
     render() {
         return (
             <Navigator
-            initialRoute={{id: 'first'}}
+            initialRoute={{id: 'login'}}
             renderScene={this.navigatorRenderScene}/>
         );
     }
@@ -35,12 +36,14 @@ class Navigation extends Component{
         _navigator = navigator;
 
         switch (route.id) {
-            case 'first':
-                return (<First navigator={navigator} title="first"/>);
-            case 'second':
-                return (<Second navigator={navigator} title="second" />);
             case 'login':
-                return (<Hackaton2 navigator={navigator} title="login" />);
+                return (<Login navigator={navigator} title="login"/>);
+            case 'welcome':
+                return (<Welcome navigator={navigator} title="welcome" />);
+            case 'capsomeone':
+                return (<CapSomeone navigator={navigator} title="capsomeone" />);
+            case 'capme':
+                return (<CapMe navigator={navigator} title="capme" />);
         }
 
     }

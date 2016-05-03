@@ -51,9 +51,24 @@ const styles = StyleSheet.create({
     }
 });
 
-class Hackaton2 extends Component {
+class Login extends Component {
     constructor(props) {
         super(props)
+    }
+    navCapMe(){
+      this.props.navigator.push({
+        id: 'capme'
+      })
+    }
+    navCapSomeone(){
+      this.props.navigator.push({
+        id: 'capsomeone'
+      })
+    }
+    navWelcome(){
+      this.props.navigator.push({
+        id: 'welcome'
+      })
     }
     render() {
         return (
@@ -80,7 +95,7 @@ class Hackaton2 extends Component {
                 </View>
                 <View style = {styles.main}>
                     <TextInput style = {{backgroundColor:"#ffffff"}} secureTextEntry={true} placeholder={"Mot de passe..."} />
-                    <Button raised = {true} primary = {"paperDeepOrange"} text = {"T\'es cap ?"} theme = {"dark"}/>
+                    <Button raised = {true} primary = {"paperDeepOrange"} text = {"T\'es cap ?"} theme = {"dark"} onPress={this.navWelcome.bind(this)} />
                 </View>
                 <View style = {styles.main}>
                     <Text style = {styles.text}>{"\n"}Tu n'es pas Jeremy W. Bush ?</Text>
@@ -90,4 +105,4 @@ class Hackaton2 extends Component {
     }
 };
 
-module.exports = Hackaton2
+module.exports = Login
