@@ -4,8 +4,8 @@
  * https://github.com/facebook/react-native
  */
 'use strict';
-var Button = require('react-native-button');
-import React, { Component, Text, View, AppRegistry, Image, StyleSheet, TextInput } from 'react-native'
+import React, { Component, Text, View, AppRegistry, Image, StyleSheet, TextInput } from 'react-native';
+import { Button, Card } from 'react-native-material-design';
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#26569e',
@@ -51,7 +51,7 @@ class Hackaton2 extends Component {
                     {"\n"}
                 </Text>
                 <TextInput style = {{backgroundColor:"#ffffff"}} secureTextEntry={true} placeholder={"Mot de passe..."} />
-                <Button style={{fontSize: 25, backgroundColor:'red', color: 'white'}} styleDisabled={{color: 'yellow'}}>T'es cap ?</Button>
+                <Button value="T'es cap ?" />
             </View>
         );
     }
