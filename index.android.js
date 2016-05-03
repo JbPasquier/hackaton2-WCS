@@ -1,16 +1,17 @@
+/*jshint esversion: 6*/
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-/*jshint esversion: 6*/
 'use strict';
-var React = require('react-native');
-var styles = React.StyleSheet.create({
+var Button = require('react-native-button');
+import React, { Component, Text, View, AppRegistry, Image, StyleSheet, TextInput } from 'react-native'
+const styles = StyleSheet.create({
     main: {
         backgroundColor: '#26569e',
         flex: 1,
         alignItems:'center',
-        paddingTop: 15
+        paddingTop: 20
     },
     logo: {
         flex: 1
@@ -22,18 +23,42 @@ var styles = React.StyleSheet.create({
     },
     bold: {
         fontWeight: "900"
+    },
+    imageProfil: {
+        borderRadius: 40,
+        width:200,
+        height:200
+    },
+    logMeIn: {
+        flex:1,
+        backgroundColor: '#ff0000',
+        height: 100
     }
 });
-var Hackaton2 = React.createClass({
-    render: function() {
-        var layout =
-        <React.View style = {styles.main} >
-            <React.Image source={require('./assets/logo.png')} />
-            <React.Text style = {styles.text}>
-                Hello, <React.Text style = {styles.bold}>Jeremy W. Bush</React.Text>
-            </React.Text>
-        </React.View>;
-        return layout;
+class Hackaton2 extends Component {
+    render() {
+        return (
+            <View style = {styles.main} >
+                <Image source={require('./assets/logo.png')}></Image>
+                <Text style = {styles.text}>
+                    <Image source={require('./assets/jeremy.jpg')} style={styles.imageProfil}></Image>
+                    {"\n"}
+                    Hello, <Text style = {styles.bold}>Jeremy W. Bush</Text>
+                    {"\n"}
+                </Text>
+                <Text style={styles.bold, styles.text}>
+                    Confirmez votre mot de passe
+                    {"\n"}
+                </Text>
+                <TextInput style = {{backgroundColor:"#ffffff"}} secureTextEntry={true} placeholder={"Mot de passe..."} />
+                <Button
+                        style={{fontSize: 20, color: 'green'}}
+                        styleDisabled={{color: 'red'}}
+                      >
+                        T'es cap ?
+                      </Button>
+            </View>
+        );
     }
-});
-React.AppRegistry.registerComponent('hackaton2', () => Hackaton2);
+};
+AppRegistry.registerComponent('hackaton2', () => Hackaton2);
