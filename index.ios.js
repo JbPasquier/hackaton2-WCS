@@ -4,28 +4,44 @@
  * @flow
  */
  'use strict';
- var React = require('react-native');
- var Hackaton2 = React.createClass({
-     render: function() {
-        var layout =
-            <React.View >
+ import React, { Component, Text, View, AppRegistry, Image, StyleSheet, TextInput } from 'react-native';
+ class Hackaton2 extends Component{
+     render() {
+       return (
+            <View style={styles.page} >
 
-              <React.Image style={styles.toto}
+              <Image
                 source={require('./assets/logo.png')}
               />
-                <React.Text>
+
+              <Image style={styles.icon}
+                source={require('./assets/jerem.png')}
+              />
+                <Text>
                     Bonjour
-                </React.Text>
+                </Text>
 
-            </React.View>
-        ;
-        return layout;
+                <TextInput style={styles.TextInputplz} placeholder = {'moi'}/>
+
+            </View>
+        );
     }
- });
- var styles = React.StyleSheet.create({
-   toto: { backgroundColor : '#26569e',
-   textAlign : 'center',
-
+ };
+ const styles = StyleSheet.create({
+   page: {
+     flex : 1,
+     alignItems: 'center',
+     paddingTop : 20,
+     backgroundColor : '#26569e',
+   },
+   icon:{
+     borderRadius: 100,
+     width : 200,
+     height : 267,
+     marginTop : 30,
+   },
+   TextInputplz : {
+     backgroundColor : 'white',
    }
  });
- React.AppRegistry.registerComponent('hackaton2', () => Hackaton2);
+ AppRegistry.registerComponent('hackaton2', () => Hackaton2);
