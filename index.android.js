@@ -1,51 +1,67 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
+/*jshint esversion: 6*/
+'use strict';
 import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
+    BackAndroid,
+    Navigator,
+    Component,
+    AppRegistry
 } from 'react-native';
 
-class hackaton2 extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import Login from './components/Login.js'
+import Welcome from './components/Welcome.js'
+import CapSomeone from './components/CapSomeone.js'
+import CapMe from './components/CapMe.js'
+import DefiAccept from './components/DefiAccept.js'
+import Profile from './components/Profile.js'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+var _navigator;
+
+BackAndroid.addEventListener('hardwareBackPress', () => {
+  if (_navigator.getCurrentRoutes().length === 1  ) {
+     return false;
+  }
+  _navigator.pop();
+  return true;
 });
 
-AppRegistry.registerComponent('hackaton2', () => hackaton2);
+class Navigation extends Component{
+    render() {
+
+        return (
+            <Navigator
+            initialRoute={{id: 'login'}}
+            configureScene = {this.configureScene}
+            renderScene={this.navigatorRenderScene}/>
+        );
+    }
+
+    configureScene (route, routeStack){
+      if (route.id == 'capme'){
+        return Navigator.SceneConfigs.FadeAndroid
+      }
+      return Navigator.SceneConfigs.FloatFromRight
+    }
+
+
+    navigatorRenderScene(route, navigator) {
+
+        _navigator = navigator;
+
+        switch (route.id) {
+            case 'login':
+                return (<Login navigator={navigator} title="login"/>);
+            case 'welcome':
+                return (<Welcome navigator={navigator} title="welcome" />);
+            case 'capsomeone':
+                return (<CapSomeone navigator={navigator} title="capsomeone" />);
+            case 'capme':
+                return (<CapMe navigator={navigator} title="capme" />);
+            case 'defiaccept':
+                return (<DefiAccept navigator={navigator}  title="defiaccept" />);
+            case 'profile':
+                return (<Profile navigator={navigator}  title="profile" />);
+        }
+
+    }
+};
+AppRegistry.registerComponent('hackaton2', () => Navigation);

@@ -3,51 +3,45 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+ 'use strict';
+ import React, { Component, Text, View, AppRegistry, Image, StyleSheet, TextInput } from 'react-native';
+ class Hackaton2 extends Component{
+     render() {
+       return (
+            <View style={styles.page} >
 
-import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+              <Image
+                source={require('./assets/logo.png')}
+              />
 
-class hackaton2 extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+              <Image style={styles.icon}
+                source={require('./assets/jerem.png')}
+              />
+                <Text>
+                    Bonjour
+                </Text>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+                <TextInput style={styles.TextInputplz} placeholder = {'moi'}/>
 
-AppRegistry.registerComponent('hackaton2', () => hackaton2);
+            </View>
+        );
+    }
+ };
+ const styles = StyleSheet.create({
+   page: {
+     flex : 1,
+     alignItems: 'center',
+     paddingTop : 20,
+     backgroundColor : '#26569e',
+   },
+   icon:{
+     borderRadius: 100,
+     width : 200,
+     height : 267,
+     marginTop : 30,
+   },
+   TextInputplz : {
+     backgroundColor : 'white',
+   }
+ });
+ AppRegistry.registerComponent('hackaton2', () => Hackaton2);
