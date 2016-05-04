@@ -70,6 +70,11 @@ class Login extends Component {
         id: 'welcome'
       })
     }
+    navModal(){
+      this.props.navigator.push({
+        id: 'modal'
+      })
+    }
     render() {
         return (
             <ScrollView style = {{backgroundColor: '#26569e'}}>

@@ -11,6 +11,7 @@ import Login from './components/Login.js'
 import Welcome from './components/Welcome.js'
 import CapSomeone from './components/CapSomeone.js'
 import CapMe from './components/CapMe.js'
+import DefiAccept from './components/DefiAccept.js'
 
 var _navigator;
 
@@ -27,8 +28,16 @@ class Navigation extends Component{
         return (
             <Navigator
             initialRoute={{id: 'login'}}
+            configureScene = {this.configureScene}
             renderScene={this.navigatorRenderScene}/>
         );
+    }
+
+    configureScene (route, routeStack){
+      if (route.id == 'modal'){
+        return Navigator.SceneConfigs.FloatFromBottom
+      }
+      return Navigator.SceneConfigs.FloatFromRight
     }
 
     navigatorRenderScene(route, navigator) {
@@ -44,6 +53,8 @@ class Navigation extends Component{
                 return (<CapSomeone navigator={navigator} title="capsomeone" />);
             case 'capme':
                 return (<CapMe navigator={navigator} title="capme" />);
+            case 'defiaccept':
+                return (<DefiAccept navigator={navigator}  title="defiaccept" />);
         }
 
     }

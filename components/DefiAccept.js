@@ -50,15 +50,11 @@ const styles = StyleSheet.create({
         color: 'white'
     }
 });
-class CapMe extends Component{
+class DefiAccept extends Component{
     constructor(props) {
         super(props)
     }
-    navDefiAccept(){
-      this.props.navigator.push({
-        id: 'defiaccept'
-      })
-    }
+
   render() {
     return (
       <ScrollView style = {{backgroundColor: '#26569e'}}>
@@ -66,23 +62,18 @@ class CapMe extends Component{
               <Image source={require('../assets/logo.png')}></Image>
           </View>
           <View style = {styles.main}>
-            <Text style = {styles.text}>
-                {"\n"}
-                Hey ! <Text style = {styles.bold}>Mauricio vous a défié !</Text>
-                {"\n"}
-
-            </Text>
+            <Text style = {[styles.bold, styles.text]}>Vous avez accepté le défi !</Text>
           </View>
           <View style = {[styles.main, styles.avatarContainer]}>
               <Avatar size={120} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
+              <Text style = {[styles.bold, styles.text]}>VS</Text>
+              <Avatar size={120} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
           </View>
 
-          <View style = {styles.main}>
-              <Button raised = {true} primary = {"paperDeepOrange"} text = {"T\'es cap ?"} theme = {"dark"} onPress={this.navDefiAccept.bind(this)} />
-          </View>
+
       </ScrollView>
     );
   }
 };
 
-module.exports = CapMe
+module.exports = DefiAccept

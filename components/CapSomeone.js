@@ -66,6 +66,11 @@ class CapSomeone extends Component{
         id: 'capme'
       })
     }
+    navModal(){
+      this.props.navigator.push({
+        id: 'modal'
+      })
+    }
   render() {
     return (
         <ScrollView style = {{backgroundColor: '#26569e'}}>
@@ -92,6 +97,9 @@ class CapSomeone extends Component{
                 </TouchableHighlight>
                 <TouchableHighlight onPress={this.navLogin.bind(this)}>
                     <Text>Navigate to login screen</Text>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={this.navModal.bind(this)}>
+                    <Text>Modal screen</Text>
                 </TouchableHighlight>
             </View>
         </ScrollView>
