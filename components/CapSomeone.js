@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
     gimmeAnHRBaby: {
         borderBottomColor: "black",
         borderBottomWidth: 1
+    },
+    home: {
+      backgroundColor: "#ecf0f1",
+      marginBottom: 10,
+      padding: 5,
     }
 });
 class CapSomeone extends Component{
@@ -76,12 +81,15 @@ class CapSomeone extends Component{
         <ScrollView style = {{backgroundColor: '#26569e'}}>
             <Subheader text={"CapSomeone Screen"} />
             <View style = {[styles.main, styles.gimmeAnHRBaby]}>
-                <View style = {[styles.main,{flexDirection:'row',flexWrap:'nowrap'}]}>
+                <View style = {[styles.main,styles.home]}>
+                  <View style={{flexDirection:'row',flexWrap:'nowrap'}}>
                     <Avatar style={{justifyContent: 'flex-start'}} size={80} image={<Image source={require('../assets/thomas.jpg')}></Image>} />
                     <Text style={{justifyContent: 'flex-end',marginLeft:40,marginRight:100}}>Défier Thomas</Text>
+                  </View>
+                  <Text>Défie les capt`Ûeurs locaux</Text>
+                  <Text>Gagne des points et c'est cool</Text>
                 </View>
-                <Text>Défie les capt`Ûeurs locaux</Text>
-                <Text style = {styles.main}>Gagne des points et c'est cool</Text>
+
             </View>
             <View style = {styles.main}>
                 <Text style = {styles.main}>Quel sera son défi ?</Text>

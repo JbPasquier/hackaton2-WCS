@@ -36,8 +36,8 @@ class Navigation extends Component{
     }
 
     configureScene (route, routeStack){
-      if (route.id == 'modal'){
-        return Navigator.SceneConfigs.FloatFromBottom
+      if (route.id == 'capme'){
+        return Navigator.SceneConfigs.FadeAndroid
       }
       return Navigator.SceneConfigs.FloatFromRight
     }

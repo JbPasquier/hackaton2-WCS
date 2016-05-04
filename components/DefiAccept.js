@@ -24,30 +24,26 @@ import {
 } from 'react-native-material-design';
 const styles = StyleSheet.create({
     main: {
-        backgroundColor: '#26569e',
         flex: 1,
         alignItems:'center',
         paddingTop: 10
     },
     text: {
-        marginTop: 20,
-        color: 'white',
-        fontSize: 20
+        color: 'black',
+        fontSize: 20,
+        marginBottom: 20,
     },
     bold: {
         fontWeight: "900"
     },
-    logMeIn: {
-        flex:1,
-        backgroundColor: '#ff0000',
-        height: 100
-    },
     avatarContainer: {
         marginTop:40
     },
-    small: {
-        fontSize: 14,
-        color: 'white'
+    home: {
+      backgroundColor: "#ecf0f1",
+      marginBottom: 10,
+      marginTop: 30,
+      padding: 15,
     }
 });
 class DefiAccept extends Component{
@@ -61,13 +57,15 @@ class DefiAccept extends Component{
           <View style = {styles.main}>
               <Image source={require('../assets/logo.png')}></Image>
           </View>
-          <View style = {styles.main}>
+          <View style = {[styles.main,styles.home]}>
+
             <Text style = {[styles.bold, styles.text]}>Vous avez accepté le défi !</Text>
-          </View>
+
           <View style ={{flexDirection:'row',flexWrap:'nowrap',flex:1}}>
-              <Avatar size={120} style={{justifyContent: 'flex-start'}} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
+              <Avatar size={120} style={{justifyContent: 'flex-start'}} image={<Image source={require('../assets/mauricio.jpg')}></Image>} />
               <Text style = {[styles.bold, styles.text]}>VS</Text>
               <Avatar size={120} style={{justifyContent: 'flex-start'}} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
+          </View>
           </View>
 
 

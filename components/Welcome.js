@@ -44,6 +44,11 @@ const styles = StyleSheet.create({
     gimmeAnHRBaby: {
         borderBottomColor: "black",
         borderBottomWidth: 1
+    },
+    home: {
+      backgroundColor: "#ecf0f1",
+      marginBottom: 10,
+      padding: 5,
     }
 });
 class Welcome extends Component{
@@ -78,15 +83,17 @@ class Welcome extends Component{
                 <Image source={require('../assets/logo.png')}></Image>
             </View>
             <View style = {[styles.main, styles.gimmeAnHRBaby]}>
-                <Subheader text={"Bienvenue sur capt`Û"} />
+                <Subheader text={"Bienvenue"} />
             </View>
             <View style = {[styles.main, styles.gimmeAnHRBaby]}>
-                <View style = {[styles.main,{flexDirection:'row',flexWrap:'nowrap'}]}>
+                <View style = {[styles.main,styles.home]}>
+                    <View style={{flexDirection:'row',flexWrap:'nowrap'}}>
                     <Avatar style={{justifyContent: 'flex-start'}} size={80} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
                     <Text onPress={this.navProfile.bind(this)} style={{justifyContent: 'flex-end',marginLeft:40,marginRight:100}}>Hello Jeremy{"\n"}LA LOUPE (28240)</Text>
-                </View>
+                    </View>
                 <Text>Défie les capt`Ûeurs locaux</Text>
                 <Text>Gagne des points et c'est cool</Text>
+                </View>
             </View>
             <View style = {[styles.main, styles.gimmeAnHRBaby]}>
                 <View style = {[styles.main,{flexDirection:'row',flexWrap:'nowrap'}]}>
