@@ -26,6 +26,7 @@ BackAndroid.addEventListener('hardwareBackPress', () => {
 
 class Navigation extends Component{
     render() {
+
         return (
             <Navigator
             initialRoute={{id: 'login'}}
@@ -40,6 +41,7 @@ class Navigation extends Component{
       }
       return Navigator.SceneConfigs.FloatFromRight
     }
+
 
     navigatorRenderScene(route, navigator) {
 

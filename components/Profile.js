@@ -67,9 +67,11 @@ class Profile extends Component{
                 <Image source={require('../assets/logo.png')}></Image>
             </View>
             <View style = {styles.main}>
+                <Text style = {[styles.text, styles.small]}>Tu as défié 8 capt'Ûeurs{"\n"}9 capt'Ûeurs t'ont défié, tu en as remporté 7.</Text>
+            </View>
+            <View style = {styles.main}>
                 <Image source={require('../assets/unicorn.gif')}></Image>
             </View>
-
             <View>
                 <TouchableHighlight onPress={this.navWelcome.bind(this)}>
                     <Text>Navigate to welcome screen</Text>
