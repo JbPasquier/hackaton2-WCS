@@ -117,6 +117,9 @@ class Welcome extends Component{
                 <TouchableHighlight onPress={this.navCapSomeone.bind(this)}>
                     <Text>Navigate to capsomeone screen</Text>
                 </TouchableHighlight>
+                <TouchableHighlight onPress={this.navProfile.bind(this)}>
+                    <Text>Navigate to my profile screen</Text>
+                </TouchableHighlight>
                 <TouchableHighlight onPress={this.navLogin.bind(this)}>
                     <Text>Navigate to login screen</Text>
                 </TouchableHighlight>

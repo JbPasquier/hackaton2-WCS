@@ -66,19 +66,13 @@ class Profile extends Component{
             <View style = {styles.main}>
                 <Image source={require('../assets/logo.png')}></Image>
             </View>
-            <View style = {[styles.main, styles.gimmeAnHRBaby]}>
-                <Subheader text={"Bienvenue sur capt`Û"} />
-            </View>
-            <View style = {[styles.main, styles.gimmeAnHRBaby]}>
-                <View style = {[styles.main,{flexDirection:'row',flexWrap:'nowrap'}]}>
-                    <Avatar style={{justifyContent: 'flex-start'}} size={80} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
-                    <Text style={{justifyContent: 'flex-end',marginLeft:40,marginRight:100}}>Jeremy W. Bush</Text>
-                </View>
+            <View style = {styles.main}>
+                <Image source={require('../assets/unicorn.gif')}></Image>
             </View>
 
             <View>
                 <TouchableHighlight onPress={this.navWelcome.bind(this)}>
-                    <Text>Navigate to login screen</Text>
+                    <Text>Navigate to welcome screen</Text>
                 </TouchableHighlight>
             </View>
       </ScrollView>
