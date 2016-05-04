@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
       backgroundColor: "#ecf0f1",
       marginBottom: 10,
       marginTop: 30,
-      padding: 5,
+      padding: 5
+    },
     pub: {
         height: 50,
         backgroundColor: "pink"
