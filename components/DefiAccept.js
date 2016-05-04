@@ -64,10 +64,10 @@ class DefiAccept extends Component{
           <View style = {styles.main}>
             <Text style = {[styles.bold, styles.text]}>Vous avez accepté le défi !</Text>
           </View>
-          <View style = {[styles.main, styles.avatarContainer]}>
-              <Avatar size={120} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
+          <View style ={{flexDirection:'row',flexWrap:'nowrap',flex:1}}>
+              <Avatar size={120} style={{justifyContent: 'flex-start'}} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
               <Text style = {[styles.bold, styles.text]}>VS</Text>
-              <Avatar size={120} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
+              <Avatar size={120} style={{justifyContent: 'flex-start'}} image={<Image source={require('../assets/jeremy.jpg')}></Image>} />
           </View>
 
 
