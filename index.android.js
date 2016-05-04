@@ -12,6 +12,7 @@ import Welcome from './components/Welcome.js'
 import CapSomeone from './components/CapSomeone.js'
 import CapMe from './components/CapMe.js'
 import DefiAccept from './components/DefiAccept.js'
+import Profile from './components/Profile.js'
 
 var _navigator;
 
@@ -55,6 +56,8 @@ class Navigation extends Component{
                 return (<CapMe navigator={navigator} title="capme" />);
             case 'defiaccept':
                 return (<DefiAccept navigator={navigator}  title="defiaccept" />);
+            case 'profile':
+                return (<Profile navigator={navigator}  title="profile" />);
         }
 
     }

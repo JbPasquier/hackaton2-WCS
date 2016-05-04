@@ -55,6 +55,11 @@ class Welcome extends Component{
           id: 'login'
         })
     }
+    navProfile(){
+        this.props.navigator.push({
+          id: 'profile'
+        })
+    }
     navCapMe(){
       this.props.navigator.push({
         id: 'capme'
@@ -63,11 +68,6 @@ class Welcome extends Component{
     navCapSomeone(){
       this.props.navigator.push({
         id: 'capsomeone'
-      })
-    }
-    navModal(){
-      this.props.navigator.push({
-        id: 'modal'
       })
     }
   render() {
@@ -119,9 +119,6 @@ class Welcome extends Component{
                 </TouchableHighlight>
                 <TouchableHighlight onPress={this.navLogin.bind(this)}>
                     <Text>Navigate to login screen</Text>
-                </TouchableHighlight>
-                <TouchableHighlight onPress={this.navModal.bind(this)}>
-                    <Text>Modal screen</Text>
                 </TouchableHighlight>
             </View>
         </ScrollView>
