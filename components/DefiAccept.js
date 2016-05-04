@@ -43,7 +43,15 @@ const styles = StyleSheet.create({
       backgroundColor: "#ecf0f1",
       marginBottom: 10,
       marginTop: 30,
-      padding: 15,
+      padding: 15
+  },
+    pub: {
+        height: 50,
+        backgroundColor: "pink"
+    },
+    small: {
+        fontSize: 14,
+        color: 'white'
     }
 });
 class DefiAccept extends Component{
@@ -54,6 +62,10 @@ class DefiAccept extends Component{
   render() {
     return (
       <ScrollView style = {{backgroundColor: '#26569e'}}>
+          <View style = {[styles.pub,{flexDirection:'row',flexWrap:'nowrap'}]}>
+              <Image source={require('../assets/caroline.jpg')} style = {{height:50,width:50,justifyContent:'flex-start',marginLeft:50}}></Image>
+              <Text style={{justifyContent:'flex-end',marginLeft:30}}>PUB{"\n"}Rencontrez l'âme soeur{"\n"}PQR.fr - Votre site de rencontre</Text>
+          </View>
           <View style = {styles.main}>
               <Image source={require('../assets/logo.png')}></Image>
           </View>
